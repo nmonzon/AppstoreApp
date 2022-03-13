@@ -13,18 +13,20 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
         
         let redVC = UIViewController()
-        redVC.view.backgroundColor = UIColor.red
+        redVC.view.backgroundColor = .white
         redVC.navigationItem.title = "Apps"
         let redNavController = UINavigationController(rootViewController: redVC)
         redNavController.tabBarItem.title = "Apps"
+        redNavController.tabBarItem.image = UIImage(named: "apps")
         redNavController.navigationBar.prefersLargeTitles = true
         
         
         let blueVC = UIViewController()
-        blueVC.view.backgroundColor = UIColor.blue
+        blueVC.view.backgroundColor = UIColor.white
         blueVC.navigationItem.title = "Search"
         let blueNavController = UINavigationController(rootViewController: blueVC)
         blueNavController.tabBarItem.title = "Search"
+        blueNavController.tabBarItem.image = UIImage(named: "search")
         blueNavController.navigationBar.prefersLargeTitles = true
         
         viewControllers = [
