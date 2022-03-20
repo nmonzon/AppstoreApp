@@ -26,7 +26,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     private let appIconImageView: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = UIColor.red
+        iv.backgroundColor = UIColor.white
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
         iv.heightAnchor.constraint(equalToConstant: 64).isActive = true
