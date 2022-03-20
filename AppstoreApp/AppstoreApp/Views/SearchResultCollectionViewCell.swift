@@ -9,17 +9,37 @@ import UIKit
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
     
-    fileprivate let appIconImageView: UIImageView = {
+    var appResult: Result? {
+        didSet {
+            guard let appResult = appResult else {
+                return
+            }
+            nameAppLabel.text = appResult.trackName
+            categoryLabel.text = appResult.primaryGenreName
+            ratingsLabel.text = "Rating: \(appResult.averageUserRating)"
+            appIconImageView.sd_setImage(with: URL(string: appResult.artworkUrl100))
+            screenshot1ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
+            if appResult.screenshotUrls.count > 1{
+                screenshot2ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
+            }
+            if appResult.screenshotUrls.count > 2{
+                screenshot3ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
+            }
+        }
+    }
+    
+    private let appIconImageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = UIColor.red
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
         iv.heightAnchor.constraint(equalToConstant: 64).isActive = true
         iv.layer.cornerRadius = 12
+        iv.clipsToBounds = true
         return iv
     }()
     
-    fileprivate let getButton: UIButton = {
+    private let getButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("GET", for: .normal)
         btn.backgroundColor = UIColor.init(white: 0.95, alpha: 1)
@@ -31,27 +51,27 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         return btn
     }()
     
-    let nameAppLabel: UILabel = {
+    private let nameAppLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Instagram"
         return lbl
     }()
     
-    let categoryLabel: UILabel = {
+    private let categoryLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Photo & Video"
         return lbl
     }()
     
-    let ratingsLabel: UILabel = {
+    private let ratingsLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "9.26M"
         return lbl
     }()
     
-    lazy var screenshot1ImageView = self.createScreenshotImageView()
-    lazy var screenshot2ImageView = self.createScreenshotImageView()
-    lazy var screenshot3ImageView = self.createScreenshotImageView()
+    private lazy var screenshot1ImageView = self.createScreenshotImageView()
+    private lazy var screenshot2ImageView = self.createScreenshotImageView()
+    private lazy var screenshot3ImageView = self.createScreenshotImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,7 +104,11 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     fileprivate func createScreenshotImageView() -> UIImageView {
         let screenshotIV = UIImageView()
-        screenshotIV.backgroundColor = UIColor.blue
+        screenshotIV.backgroundColor = UIColor.white
+        screenshotIV.layer.cornerRadius = 8.0
+        screenshotIV.clipsToBounds = true
+        screenshotIV.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        screenshotIV.layer.borderWidth = 0.5
         return screenshotIV
     }
     
