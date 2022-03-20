@@ -31,19 +31,19 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         return btn
     }()
     
-    fileprivate let nameAppLabel: UILabel = {
+    let nameAppLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Instagram"
         return lbl
     }()
     
-    fileprivate let categoryLabel: UILabel = {
+    let categoryLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Photo & Video"
         return lbl
     }()
     
-    fileprivate let ratingsLabel: UILabel = {
+    let ratingsLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "9.26M"
         return lbl
