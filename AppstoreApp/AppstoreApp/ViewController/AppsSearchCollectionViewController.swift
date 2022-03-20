@@ -11,7 +11,7 @@ import SDWebImage
 class AppsSearchCollectionViewController: UICollectionViewController {
 
     private let cellId = "cellId"
-    private var appResults: [Result] = []
+    private var appResultsVM: [SearchResultViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,8 @@ class AppsSearchCollectionViewController: UICollectionViewController {
                 return
             }
             
-            self.appResults = appResults
+            self.appResultsVM = appResults.map({SearchResultViewModel(result: $0)})
+//            self.appResults = appResults
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -47,12 +48,12 @@ extension AppsSearchCollectionViewController: UICollectionViewDelegateFlowLayout
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return appResults.count
+        return appResultsVM.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCollectionViewCell
-        cell.appResult = appResults[indexPath.item]
+        cell.appResultsVM = appResultsVM[indexPath.item]
         return cell
     }
     

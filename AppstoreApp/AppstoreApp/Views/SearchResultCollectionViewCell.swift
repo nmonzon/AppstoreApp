@@ -9,22 +9,18 @@ import UIKit
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
     
-    var appResult: Result? {
+    var appResultsVM: SearchResultViewModel? {
         didSet {
-            guard let appResult = appResult else {
+            guard let appResultsVM = appResultsVM else {
                 return
             }
-            nameAppLabel.text = appResult.trackName
-            categoryLabel.text = appResult.primaryGenreName
-            ratingsLabel.text = "Rating: \(appResult.averageUserRating)"
-            appIconImageView.sd_setImage(with: URL(string: appResult.artworkUrl100))
-            screenshot1ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
-            if appResult.screenshotUrls.count > 1{
-                screenshot2ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
-            }
-            if appResult.screenshotUrls.count > 2{
-                screenshot3ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
-            }
+            nameAppLabel.text   = appResultsVM.appName
+            categoryLabel.text  = appResultsVM.category
+            ratingsLabel.text   = appResultsVM.rating
+            appIconImageView.sd_setImage(with: URL(string: appResultsVM.appLogo))
+            screenshot1ImageView.sd_setImage(with: URL(string: appResultsVM.screenShoot1))
+            screenshot2ImageView.sd_setImage(with: URL(string: appResultsVM.screenShoot2))
+            screenshot3ImageView.sd_setImage(with: URL(string: appResultsVM.screenShoot3))
         }
     }
     
