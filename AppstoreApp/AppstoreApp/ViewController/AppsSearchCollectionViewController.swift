@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class AppsSearchCollectionViewController: UICollectionViewController {
+class AppsSearchCollectionViewController: BaseListController {
 
     private let cellId = "cellId"
     private let searchController = UISearchController(searchResultsController: nil)

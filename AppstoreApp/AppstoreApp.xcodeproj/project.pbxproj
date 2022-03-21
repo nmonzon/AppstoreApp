@@ -20,6 +20,7 @@
 		4B6516FC27DECFC100C966B3 /* UIView + Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6516FB27DECFC100C966B3 /* UIView + Layout.swift */; };
 		4B6516FE27DED0C600C966B3 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6516FD27DED0C600C966B3 /* VerticalStackView.swift */; };
 		4B8E39DF27E7CC6400B17B00 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39DE27E7CC6400B17B00 /* SearchResultViewModel.swift */; };
+		4B8E39E327E8045300B17B00 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39E227E8045300B17B00 /* BaseListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4B6516FB27DECFC100C966B3 /* UIView + Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Layout.swift"; sourceTree = "<group>"; };
 		4B6516FD27DED0C600C966B3 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		4B8E39DE27E7CC6400B17B00 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
+		4B8E39E227E8045300B17B00 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		5B0BAC449D9C58F1353A97BC /* Pods_AppstoreApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppstoreApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9850EB3EBDD4E3CCF1541443 /* Pods-AppstoreApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppstoreApp.release.xcconfig"; path = "Target Support Files/Pods-AppstoreApp/Pods-AppstoreApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 			children = (
 				4B6516F227DD9AD400C966B3 /* BaseTabBarController.swift */,
 				4B6516F527DE297400C966B3 /* AppsSearchCollectionViewController.swift */,
+				4B8E39E227E8045300B17B00 /* BaseListController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				4B1FF72627E7A655007F7C28 /* SearchResult.swift in Sources */,
 				4B8E39DF27E7CC6400B17B00 /* SearchResultViewModel.swift in Sources */,
 				4B6516DF27DD94EC00C966B3 /* AppDelegate.swift in Sources */,
+				4B8E39E327E8045300B17B00 /* BaseListController.swift in Sources */,
 				4B6516E127DD94EC00C966B3 /* SceneDelegate.swift in Sources */,
 				4B1FF72927E7B303007F7C28 /* Service.swift in Sources */,
 				4B6516FC27DECFC100C966B3 /* UIView + Layout.swift in Sources */,
