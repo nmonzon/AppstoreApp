@@ -53,13 +53,9 @@ extension AppsSearchCollectionViewController: UICollectionViewDelegateFlowLayout
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
-            Service.shared.fetchItunesData(searchText: searchText) { result, error in
-                if let error = error {
-                    print("Failed to fetch Apps data", error)
-                    return
-                }
-                
-                self.appResultsVM = result.map({SearchResultViewModel(result: $0)})
+            let urlString = "https://itunes.apple.com/search?term=\(searchText)&entity=software"
+            Service.shared.fetchGenericData(urlString: urlString) { (searchResult: SearchResult) in
+                self.appResultsVM = searchResult.results.map({SearchResultViewModel(result: $0)})
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }

@@ -11,26 +11,21 @@ class Service {
     
     static let shared = Service()
     
-    func fetchItunesData(searchText: String, completion: @escaping ([Result], Error?) -> ()) {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchText)&entity=software") else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
+    func fetchGenericData<T: Decodable>(urlString: String, completion: @escaping (T) -> ()) {
 
-            if let error = error {
-                completion([], error)
-                return
-            }
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
 
             guard let data = data else {
                 print("Failed to retrieve apps data")
-                completion([], nil)
                 return
             }
 
             do {
-                let jsonResult = try JSONDecoder().decode(SearchResult.self, from: data)
-                completion(jsonResult.results, nil)
+                let jsonResult = try JSONDecoder().decode(T.self, from: data)
+                completion(jsonResult)
             } catch let jsonError {
-                completion([], jsonError)
+                print("Failed to decode data", jsonError)
             }
 
         }.resume()
