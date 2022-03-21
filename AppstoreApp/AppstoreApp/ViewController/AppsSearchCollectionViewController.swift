@@ -76,6 +76,7 @@ extension AppsSearchCollectionViewController: UICollectionViewDelegateFlowLayout
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        lblSearchTerm.isHidden = appResultsVM.count > 0
         return appResultsVM.count
     }
     
