@@ -33,9 +33,6 @@ class AppsSearchCollectionViewController: BaseListController {
         setupSearchBar()
     }
     
-    init() { super.init(collectionViewLayout: UICollectionViewFlowLayout()) }
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
     private func setupSearchTerm() {
         collectionView.addSubview(lblSearchTerm)
         lblSearchTerm.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true

@@ -10,8 +10,8 @@ import UIKit
 
 class BaseListController: UICollectionViewController {
     
-    override init(collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(collectionViewLayout: layout)
+    init() {
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     required init?(coder: NSCoder) {
