@@ -20,8 +20,7 @@ class AppsHorizontalCollectionViewController: BaseListController {
             layout.scrollDirection = .horizontal
         }
         
-        collectionView.backgroundColor = .orange
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: appsHorizontalCellId)
+        collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: appsHorizontalCellId)
     }
 }
 
@@ -33,14 +32,13 @@ extension AppsHorizontalCollectionViewController: UICollectionViewDelegateFlowLa
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: appsHorizontalCellId, for: indexPath)
-        cell.backgroundColor = .purple
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: appsHorizontalCellId, for: indexPath) as! AppRowCell
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (view.frame.height - (2 * topBottomPadding) - (2 * lineSpacing)) / 3
-        return CGSize(width: view.frame.width, height: height)
+        let height = (view.frame.height - 2 * topBottomPadding - 2 * lineSpacing) / 3
+        return CGSize(width: view.frame.width - 48.0, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

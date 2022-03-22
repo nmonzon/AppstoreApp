@@ -13,15 +13,14 @@ class AppsGroupCell: UICollectionViewCell {
     private let appsHorizontalController = AppsHorizontalCollectionViewController()
     
     private let lblAppSection: UILabel = {
-        let lblAppSection = UILabel(title: "App Section", font: UIFont.boldSystemFont(ofSize: 20))
+        let lblAppSection = UILabel(title: "App Section", font: UIFont.boldSystemFont(ofSize: 30))
         return lblAppSection
     }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        backgroundColor = .lightGray
         addSubview(lblAppSection)
-        lblAppSection.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor)
+        lblAppSection.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 0))
         addSubview(appsHorizontalController.view)
         appsHorizontalController.view.anchor(top: lblAppSection.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
     }

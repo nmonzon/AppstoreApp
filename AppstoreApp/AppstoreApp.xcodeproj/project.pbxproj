@@ -22,9 +22,10 @@
 		4B8E39DF27E7CC6400B17B00 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39DE27E7CC6400B17B00 /* SearchResultViewModel.swift */; };
 		4B8E39E327E8045300B17B00 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39E227E8045300B17B00 /* BaseListController.swift */; };
 		4B8E39E527E804F400B17B00 /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39E427E804F400B17B00 /* AppsController.swift */; };
-		4B8E39E927E8072B00B17B00 /* UILabel + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39E827E8072B00B17B00 /* UILabel + Helpers.swift */; };
+		4B8E39E927E8072B00B17B00 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39E827E8072B00B17B00 /* Extensions.swift */; };
 		4B8E39ED27E80E5B00B17B00 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39EC27E80E5B00B17B00 /* AppsGroupCell.swift */; };
 		4B8E39EF27E8110A00B17B00 /* AppsHorizontalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39EE27E8110A00B17B00 /* AppsHorizontalCollectionViewController.swift */; };
+		4B8E39F127E93B0A00B17B00 /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8E39F027E93B0A00B17B00 /* AppRowCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +46,10 @@
 		4B8E39DE27E7CC6400B17B00 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		4B8E39E227E8045300B17B00 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		4B8E39E427E804F400B17B00 /* AppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsController.swift; sourceTree = "<group>"; };
-		4B8E39E827E8072B00B17B00 /* UILabel + Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Helpers.swift"; sourceTree = "<group>"; };
+		4B8E39E827E8072B00B17B00 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4B8E39EC27E80E5B00B17B00 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		4B8E39EE27E8110A00B17B00 /* AppsHorizontalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalCollectionViewController.swift; sourceTree = "<group>"; };
+		4B8E39F027E93B0A00B17B00 /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
 		5B0BAC449D9C58F1353A97BC /* Pods_AppstoreApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppstoreApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9850EB3EBDD4E3CCF1541443 /* Pods-AppstoreApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppstoreApp.release.xcconfig"; path = "Target Support Files/Pods-AppstoreApp/Pods-AppstoreApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,7 +152,7 @@
 			children = (
 				4B6516FB27DECFC100C966B3 /* UIView + Layout.swift */,
 				4B6516FD27DED0C600C966B3 /* VerticalStackView.swift */,
-				4B8E39E827E8072B00B17B00 /* UILabel + Helpers.swift */,
+				4B8E39E827E8072B00B17B00 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4B8E39EC27E80E5B00B17B00 /* AppsGroupCell.swift */,
+				4B8E39F027E93B0A00B17B00 /* AppRowCell.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				4B6516F327DD9AD400C966B3 /* BaseTabBarController.swift in Sources */,
 				4B1FF72627E7A655007F7C28 /* SearchResult.swift in Sources */,
 				4B8E39DF27E7CC6400B17B00 /* SearchResultViewModel.swift in Sources */,
+				4B8E39F127E93B0A00B17B00 /* AppRowCell.swift in Sources */,
 				4B6516DF27DD94EC00C966B3 /* AppDelegate.swift in Sources */,
 				4B8E39E327E8045300B17B00 /* BaseListController.swift in Sources */,
 				4B8E39EF27E8110A00B17B00 /* AppsHorizontalCollectionViewController.swift in Sources */,
@@ -322,7 +326,7 @@
 				4B1FF72927E7B303007F7C28 /* Service.swift in Sources */,
 				4B6516FC27DECFC100C966B3 /* UIView + Layout.swift in Sources */,
 				4B6516F927DE35BC00C966B3 /* SearchResultCollectionViewCell.swift in Sources */,
-				4B8E39E927E8072B00B17B00 /* UILabel + Helpers.swift in Sources */,
+				4B8E39E927E8072B00B17B00 /* Extensions.swift in Sources */,
 				4B6516FE27DED0C600C966B3 /* VerticalStackView.swift in Sources */,
 				4B8E39E527E804F400B17B00 /* AppsController.swift in Sources */,
 			);
