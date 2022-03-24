@@ -9,11 +9,19 @@ import UIKit
 
 class AppRowCell: UICollectionViewCell {
     
+    var feedResult: FeedResult? {
+        didSet {
+            nameAppLabel.text = feedResult?.name ?? ""
+            companyLabel.text = feedResult?.artistName ?? ""
+            appIconImageView.sd_setImage(with: URL(string: feedResult?.artworkUrl100 ?? ""))
+        }
+    }
+    
     private let appIconImageView: UIImageView = {
         let iv = UIImageView(cornerRadius: 12)
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.constrainWidth(constant: 54)
-        iv.constrainHeight(constant: 54)
+        iv.constrainWidth(constant: 64)
+        iv.constrainHeight(constant: 64)
         return iv
     }()
     
@@ -43,7 +51,10 @@ class AppRowCell: UICollectionViewCell {
         
         let appHorizontalStackView = UIStackView(arrangedSubviews: [
             appIconImageView,
-            nameAppLabel,
+            VerticalStackView(arrangedSubviews: [
+                nameAppLabel,
+                companyLabel
+            ]),
             getButton
         ])
         appHorizontalStackView.alignment = .center

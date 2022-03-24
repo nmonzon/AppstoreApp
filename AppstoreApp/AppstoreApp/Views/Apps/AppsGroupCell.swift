@@ -10,7 +10,15 @@ import UIKit
 
 class AppsGroupCell: UICollectionViewCell {
     
-    private let appsHorizontalController = AppsHorizontalCollectionViewController()
+    let appsHorizontalController = AppsHorizontalCollectionViewController()
+    var appGroup: AppGroup? {
+        didSet {
+            if let appGroup = appGroup {
+                lblAppSection.text = appGroup.feed.title
+                appsHorizontalController.appGroup = appGroup
+            }
+        }
+    }
     
     private let lblAppSection: UILabel = {
         let lblAppSection = UILabel(title: "App Section", font: UIFont.boldSystemFont(ofSize: 30))

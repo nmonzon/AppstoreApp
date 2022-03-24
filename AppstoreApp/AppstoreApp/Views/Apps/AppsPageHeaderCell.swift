@@ -9,7 +9,7 @@ import UIKit
 
 class AppsPageHeaderCell: UICollectionViewCell {
     
-    private let appsHeaderHorizontalController = AppsHeaderHorizontalController()
+    let appsHeaderHorizontalController = AppsHeaderHorizontalController()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)

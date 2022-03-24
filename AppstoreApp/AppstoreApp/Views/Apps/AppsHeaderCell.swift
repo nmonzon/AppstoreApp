@@ -9,6 +9,16 @@ import UIKit
 
 class AppsHeaderCell: UICollectionViewCell {
     
+    var socialApp: SocialApp? {
+        didSet{
+            if let socialApp = socialApp {
+                titleLabel.text = socialApp.tagline
+                lblCompanyLabel.text = socialApp.name
+                imageView.sd_setImage(with: URL(string: socialApp.imageUrl))
+            }
+        }
+    }
+    
     private let lblCompanyLabel: UILabel = {
         let lblCompanyLabel = UILabel(title: "Facebook", font: UIFont.boldSystemFont(ofSize: 12))
         lblCompanyLabel.textColor = .blue
@@ -23,7 +33,7 @@ class AppsHeaderCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView(cornerRadius: 8)
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .white
         return imageView
     }()
     

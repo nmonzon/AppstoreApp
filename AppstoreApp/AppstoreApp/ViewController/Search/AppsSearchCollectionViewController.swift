@@ -54,8 +54,13 @@ extension AppsSearchCollectionViewController: UICollectionViewDelegateFlowLayout
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
             let urlString = "https://itunes.apple.com/search?term=\(searchText)&entity=software"
-            Service.shared.fetchGenericData(urlString: urlString) { (searchResult: SearchResult) in
-                self.appResultsVM = searchResult.results.map({SearchResultViewModel(result: $0)})
+            Service.shared.fetchGenericData(urlString: urlString) { (searchResult: SearchResult?, error: Error?) in
+                
+                if let error = error {
+                    print("Failed to fetch the text", error)
+                    return
+                }
+                self.appResultsVM = searchResult?.results.map({SearchResultViewModel(result: $0)}) ?? []
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
